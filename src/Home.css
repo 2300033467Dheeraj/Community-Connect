@@ -1,0 +1,108 @@
+/* Parent container */
+.parent {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    margin-right: 300px; /* Space for the sidebar */
+  }
+  
+  /* Create Thread Button */
+  .createthread {
+    background-color: #2563eb;
+    color: white;
+    font-weight: bold;
+    padding: 12px 20px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    position: right;
+  }
+  
+  .createthread:hover {
+    background-color: #1e40af;
+  }
+  
+  /* Button List */
+  .button-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+  }
+  
+  .button-list li {
+    margin-bottom: 10px;
+  }
+  
+  .button-list button {
+    background-color: #e5e7eb;
+    padding: 10px 16px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .button-list button:hover {
+    background-color: #d1d5db;
+  }
+  .categories{
+    margin-top: 20px;
+    padding-bottom: 10px;
+  }
+  /* Right Sidebar */
+  .sidebar {
+    width: 280px;
+    padding: 20px;
+    background: white;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    position: fixed;
+    right: 40px;
+    top: 120px;
+  }
+  
+  /* Sidebar Sections */
+  .sidebar h3 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .sidebar ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .sidebar li {
+    margin-bottom: 10px;
+  }
+  
+  .sidebar a {
+    text-decoration: none;
+    color: #374151;
+    transition: font-weight 0.2s;
+  }
+  
+  .sidebar a:hover {
+    font-weight: bold;
+  }
+  
+  /* Trending Topics */
+  .trendingtopics {
+    margin-top: 20px;
+  }
+  
+  .trendingtopics li {
+    color: #4b5563;
+  }
+  
+  .trendingtopics strong {
+    color: black;
+  }
+  
+  .trendingtopics span {
+    font-size: 12px;
+    color: #9ca3af;
+  }
+  
