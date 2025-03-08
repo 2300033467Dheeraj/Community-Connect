@@ -5,6 +5,7 @@
     padding: 20px;
     margin-right: 300px; /* Space for the sidebar */
   }
+  
   .posts-container {
     padding: 20px;
     max-width: 800px;
@@ -72,11 +73,13 @@
   .like-btn {
     background: #ff4b4b15;
     color: #ff4b4b;
+    height: 40px;
   }
   
   .comment-btn {
     background: #4b4bff15;
     color: #4b4bff;
+    height: 40px;
   }
   
   /* Create Thread Button */

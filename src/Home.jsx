@@ -1,21 +1,36 @@
 import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import './Home.css';
+import CommentSection from './CommentSection';
 
 export default function Home() {
   const navigate = useNavigate();
   const [posts, setPosts] = useState([]);
+  const [votes, setVotes] = useState([]);
+  const [openComments, setOpenComments] = useState({}); // Track open comments
 
   useEffect(() => {
-    // Get posts from localStorage
     const storedPosts = JSON.parse(localStorage.getItem('posts')) || [];
     setPosts(storedPosts);
+    setVotes(storedPosts.map(() => 0));
   }, []);
+
+  const handleVote = (index, change) => {
+    const newVotes = [...votes];
+    newVotes[index] += change;
+    setVotes(newVotes);
+  };
+
+  const toggleComments = (index) => {
+    setOpenComments({
+      ...openComments,
+      [index]: !openComments[index],
+    });
+  };
 
   return (
     <div className="flex">
       <div className="parent">
-        {/* Posts Display Section */}
         <div className="posts-container">
           {posts.map((post, index) => (
             <div key={index} className="post-card">
@@ -35,17 +50,32 @@ export default function Home() {
                   <button className="like-btn">
                     <i className="fas fa-heart"></i> Like
                   </button>
-                  <button className="comment-btn">
+                  <button className="comment-btn" onClick={() => toggleComments(index)}>
                     <i className="fas fa-comment"></i> Comment
                   </button>
+                  <div className="vote-section">
+                    <button
+                      className="vote-button upvote"
+                      onClick={() => handleVote(index, 1)}
+                    >
+                      ▲
+                    </button>
+                    <span className="vote-count">{votes[index]}</span>
+                    <button
+                      className="vote-button downvote"
+                      onClick={() => handleVote(index, -1)}
+                    >
+                      ▼
+                    </button>
+                  </div>
                 </div>
               </div>
+              {openComments[index] && <CommentSection postId={index} />}
             </div>
           ))}
         </div>
       </div>
 
-      {/* Right Sidebar */}
       <div className="sidebar">
         <button 
         className="createthread" 
@@ -55,7 +85,6 @@ export default function Home() {
         Create New Thread
         </button>
 
-        
         <div className="categories">
           <h3>Categories</h3>
           <ul className="button-list">
