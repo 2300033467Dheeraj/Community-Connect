@@ -5,6 +5,79 @@
     padding: 20px;
     margin-right: 300px; /* Space for the sidebar */
   }
+  .posts-container {
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .post-card {
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+  
+  .post-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+  
+  .post-category {
+    background: #e0e0e0;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.9em;
+  }
+  
+  .post-content {
+    margin-bottom: 15px;
+    margin-top: 40px;
+    font-size: 0.95em;
+  }
+  
+  .post-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 15px;
+    border-top: 1px solid #eee;
+  }
+  
+  .post-meta {
+    display: flex;
+    gap: 15px;
+    color: #666;
+    font-size: 0.9em;
+  }
+  
+  .post-actions {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .post-actions button {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  
+  .like-btn {
+    background: #ff4b4b15;
+    color: #ff4b4b;
+  }
+  
+  .comment-btn {
+    background: #4b4bff15;
+    color: #4b4bff;
+  }
   
   /* Create Thread Button */
   .createthread {
@@ -91,6 +164,7 @@
   /* Trending Topics */
   .trendingtopics {
     margin-top: 20px;
+    display: contents;
   }
   
   .trendingtopics li {
