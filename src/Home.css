@@ -11,7 +11,49 @@
     max-width: 800px;
     margin: 0 auto;
   }
+  .post-card {
+    display: flex; /* Changed */
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  .left-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-right: 10px;
+  }
   
+  .vote-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10px; /* Spacing between vote section and comment button */
+  }
+  
+  .vote-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    height: 20px;
+    font-size: large;
+    padding-bottom: 5px ;
+    margin-bottom: 10px;
+  }
+  
+  .vote-count {
+    margin: 5px 0;
+    font-size: 1.2em;
+  }
+  
+  .upvote {
+    color: green;
+
+  }
+  
+  .downvote {
+    color: red;
+  }
   .post-card {
     background: white;
     border-radius: 8px;
@@ -75,11 +117,26 @@
     color: #ff4b4b;
     height: 40px;
   }
+  .right-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-left: 10px;
+  }
   
   .comment-btn {
-    background: #4b4bff15;
-    color: #4b4bff;
-    height: 40px;
+    background: none;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    margin-bottom: 10px;
+    
+  }
+  .Commentimg{
+    width: 15px;
+    height: 15px;
+    margin-top: 40%;
+    margin-right: 5px;
   }
   
   /* Create Thread Button */

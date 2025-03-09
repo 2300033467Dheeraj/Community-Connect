@@ -10,9 +10,6 @@ const Navbar = () => {
         Community Connect
       </button>
       <input type="text" className="nav-search" placeholder="Search Discussions" aria-label="Search" />
-      <button className="nav-notification" onClick={() => navigate('/Notification')} aria-label="Go to Notification Page">
-        Notification
-      </button>
       <button className="nav-profile" onClick={() => navigate('/Profile')} aria-label="Go to Profile Page">
         Profile
       </button>

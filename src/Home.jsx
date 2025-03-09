@@ -7,7 +7,7 @@ export default function Home() {
   const navigate = useNavigate();
   const [posts, setPosts] = useState([]);
   const [votes, setVotes] = useState([]);
-  const [openComments, setOpenComments] = useState({}); // Track open comments
+  const [openComments, setOpenComments] = useState({});
 
   useEffect(() => {
     const storedPosts = JSON.parse(localStorage.getItem('posts')) || [];
@@ -34,43 +34,44 @@ export default function Home() {
         <div className="posts-container">
           {posts.map((post, index) => (
             <div key={index} className="post-card">
-              <div className="post-header">
-                <h2>{post.title}</h2>
-                <span className="post-category">{post.category}</span>
-              </div>
-              <div className="post-content">
-                <p>{post.content}</p>
-              </div>
-              <div className="post-footer">
-                <div className="post-meta">
-                  <span>Posted by: {post.author}</span>
-                  <span>{new Date(post.timestamp).toLocaleDateString()}</span>
+              {/* Left Section (Votes and Comment) */}
+              <div className="left-section">
+                <div className="vote-section">
+                  <button
+                    className="vote-button upvote"
+                    onClick={() => handleVote(index, 1)}
+                  >
+                    ▲
+                  </button>
+                  <span className="vote-count">{votes[index]}</span>
+                  <button
+                    className="vote-button downvote"
+                    onClick={() => handleVote(index, -1)}
+                  >
+                    ▼
+                  </button>
                 </div>
-                <div className="post-actions">
-                  <button className="like-btn">
-                    <i className="fas fa-heart"></i> Like
+                <button className="comment-btn" onClick={() => toggleComments(index)}>
+                  <i className="fas fa-comment"></i> 
+                  <img src="/Comment.jpg" alt="Comment" className="Commentimg" />
                   </button>
-                  <button className="comment-btn" onClick={() => toggleComments(index)}>
-                    <i className="fas fa-comment"></i> Comment
-                  </button>
-                  <div className="vote-section">
-                    <button
-                      className="vote-button upvote"
-                      onClick={() => handleVote(index, 1)}
-                    >
-                      ▲
-                    </button>
-                    <span className="vote-count">{votes[index]}</span>
-                    <button
-                      className="vote-button downvote"
-                      onClick={() => handleVote(index, -1)}
-                    >
-                      ▼
-                    </button>
+                {openComments[index] && <CommentSection postId={index} />}
+              </div>
+
+              {/* Right Section (Post Content) */}
+              <div className="post-content">
+                <div className="post-header">
+                  <h2>{post.title}</h2>
+                  <span className="post-category">{post.category}</span>
+                </div>
+                <p>{post.content}</p>
+                <div className="post-footer">
+                  <div className="post-meta">
+                    <span>Posted by: {post.author}</span>
+                    <span>{new Date(post.timestamp).toLocaleDateString()}</span>
                   </div>
                 </div>
               </div>
-              {openComments[index] && <CommentSection postId={index} />}
             </div>
           ))}
         </div>
