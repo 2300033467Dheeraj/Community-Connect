@@ -5,7 +5,7 @@ const Create = () => {
   const [title, setTitle] = useState("");
   const [category, setCategory] = useState("");
   const [content, setContent] = useState("");
-  const [tags, setTags] = useState(["Technology", "Programming", "Web"]);
+  const [tags, setTags] = useState(["Technology", "Programming", "Web","Development", "Design", "Devops", "Career"]);
   const [images, setImages] = useState([]);
 
   const handleImageUpload = (event) => {
@@ -60,6 +60,13 @@ const Create = () => {
           <option value="Technology">Technology</option>
           <option value="Programming">Programming</option>
           <option value="Web">Web</option>
+          <option value="Development">Development</option>
+          <option value="Design">Design</option>
+          <option value="Devops">Devops</option>
+          <option value="Career">Career</option>
+
+          {/* Add custom category */}
+          
         </select>
 
         {/* Thread Content */}
@@ -91,8 +98,10 @@ const Create = () => {
 
         {/* Buttons */}
         <div className="button-container">
-          <button className="preview-button">Preview</button>
-          <button onClick={handleSubmit} className="post-button">Post Thread</button>
+          <button onClick={handleSubmit}
+           
+          className="post-button">Post Thread</button>
+          
         </div>
       </div>
     </div>
