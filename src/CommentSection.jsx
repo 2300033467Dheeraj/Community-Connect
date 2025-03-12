@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import './CommentSection.css'; // Create this CSS file
 
 function CommentSection({ postId }) {

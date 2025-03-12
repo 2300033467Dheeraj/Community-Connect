@@ -101,24 +101,7 @@ export default function Home() {
             ))}
           </ul>
         </div>
-
-        <div className="trendingtopics">
-          <h3>Trending Topics</h3>
-          <ul>
-            {[
-              "React 18 Features",
-              "TypeScript Best Practices", 
-              "CSS Grid vs Flexbox",
-              "Next.js 13 Updates"
-            ].map((topic, index) => (
-              <li key={index}>
-                <strong>#{index + 1}</strong> {topic}
-                <br />
-              </li>
-            ))}
-          </ul>
-        </div>
       </div>
     </div>
   );
-}
+} 
