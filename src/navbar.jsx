@@ -25,9 +25,10 @@ const Navbar = () => {
       </button>
 
       {/* Profile Button */}
-      <button className="nav-profile" onClick={() => navigate('/profile')} aria-label="Go to Profile Page">
-        Profile
+      <button className="nav-profile" onClick={() => navigate('/profile')}>
+        <img src="/" alt="Profile" />
       </button>
+
     </nav>
   );
 };
