@@ -39,12 +39,53 @@
   }
   .nav-profile{
   position: right;
-  margin-left: 1rem;
+  margin-left: 5rem;
   display: contents;
-  
+  padding: 10px;
+  font-size: 15px;
+  margin-top: 20px;
   }
   
   .nav-button:hover {
     background-color: rgba(243, 53, 53, 0.2);
     transform: scale(1.05);
-  }
+  }/* Container for login & sign-in buttons */
+.nav-auth {
+  display: flex;
+  gap: 1px; /* Space between buttons */
+}
+
+/* Login Button - Transparent with Blue Border */
+.nav-login {
+  background-color: transparent;
+  color: #007bff; /* Blue Text */
+  border: 2px solid #007bff; /* Blue Border */
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.nav-login:hover {
+  background-color: #007bff; /* Blue Background on Hover */
+  color: white;
+  transform: scale(1.05);
+}
+
+/* Sign-In Button - Blue Background */
+.nav-signup {
+  background-color: #007bff; /* Blue */
+  color: white;
+  border: 2px solid #007bff;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.nav-signup:hover {
+  background-color: #0056b3; /* Darker Blue */
+  transform: scale(1.05);
+}
